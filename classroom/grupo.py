@@ -12,22 +12,25 @@ class Grupo:
         for x in kwargs.values():
             self._asignaturas.append(Asignatura(x))
 
-    def agregarAlumno(self, alumno, lista=[]):
+    def agregarAlumno(self, alumno, lista=None):
+        if lista is None:
+            lista = []
         lista.append(alumno)
         self.listadoAlumnos = self.listadoAlumnos + lista
 
     def __str__(self):
-        return self._grupo
+        return f'Grupo de estudiantes: {self._grupo}' 
+
     #     pass
 
     @ classmethod
-    def asignarNombre(cls, nombre="Grado 10"):
+    def asignarNombre(cls, nombre="Grado 1"):
         cls.grado = nombre
 
     @ classmethod
     def asignarNombre(cls, nombre="Grado 6"):
         cls.grado = nombre
 
-    @ classmethod
-    def asignarNombre(cls, nombre="Grado 4"):
-        cls.grado = nombre
+    #@ classmethod
+    #def asignarNombre(cls, nombre="Grado 4"):
+      #  cls.grado = nombre
