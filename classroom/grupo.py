@@ -3,12 +3,12 @@ from classroom.asignatura import Asignatura
 class Grupo:
     grado = None
 
-    def __init__(self, estudiantes, grupo="grupo ordinado", asignaturas=None ):
+    def __init__(self, grupo="grupo ordinado", asignaturas=None, estudiantes=[]):
         self._grupo = grupo
         self._asignaturas = asignaturas
         self.listadoAlumnos = estudiantes
 
-    def listadoAsignaturas(self, kwargs):
+    def listadoAsignaturas(self, **kwargs):
         for x in kwargs.values():
             self._asignaturas.append(Asignatura(x))
 
@@ -16,7 +16,8 @@ class Grupo:
         lista.append(alumno)
         self.listadoAlumnos = self.listadoAlumnos + lista
 
-    # def __str__(self):
+    def __str__(self):
+        return self._grupo
     #     pass
 
     @ classmethod
